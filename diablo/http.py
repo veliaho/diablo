@@ -63,7 +63,7 @@ class Response(object):
 
     def __init__(self, code=None, content=None, headers=None):
         self.code = code
-        self.content = content or ''
+        self.content = content if (content or content == []) else ''
         self.headers = headers if headers is not None else {}
 
     def __repr__(self):
